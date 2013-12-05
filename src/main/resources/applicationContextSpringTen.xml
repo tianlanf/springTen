@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+        <property name="requiredAnnotationType" value="com.thoughtworks.yafei.Mandatory"/>
+    </bean>
+
+    <bean id="supermarket" class="com.thoughtworks.yafei.SuperMarket">
+        <property name="product" ref="product"/>
+    </bean>
+
+    <bean id="product" class="com.thoughtworks.yafei.Product">
+        <property name="name" value="iceCream"/>
+    </bean>
+</beans>
